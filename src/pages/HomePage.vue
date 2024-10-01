@@ -1,8 +1,26 @@
 <template>
-  <h1 class="text-red-900">Hi! I'm Home Page!</h1>
+  <title-component title="my diary"/>
+  <nav class="mx-10">
+    <ul class="w-full flex flex-col items-center gap-9">
+      <li>
+        <link-component to="/table-contents" text="table of contents"/>
+      </li>
+      <li>
+        <link-component to="/list-page" text="catalog"/>
+      </li>
+      <li>
+        <link-component to="/my-notes" text="my notes"/>
+      </li>
+      <li>
+        <link-component to="/front-cover" text="Close"/>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script setup>
+import TitleComponent from "@/components/TitleComponent.vue";
+import LinkComponent from "@components/LinkComponent.vue";
 
 </script>
 
