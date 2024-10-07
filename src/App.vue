@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto max-w-7xl">
-    <router-view/>
+      <router-view/>
   </div>
 </template>
 

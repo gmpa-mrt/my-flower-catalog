@@ -34,8 +34,31 @@
     .underline-left {
         position: relative;
     }
-}
 
+    .accordeon {
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-100%);
+        margin: 0 0 0 30px;
+        opacity: 0;
+        transition:
+                transform 0.5s ease-in,
+                opacity 0.5s 0.6s linear,
+                margin 0.5s 0.3s ease-in-out
+    }
+
+    .accordeon.open {
+        transform: translateY(0);
+        opacity: 1;
+        margin: 30px;
+    }
+    .accordeon.close {
+        transition:
+                transform 0.5s ease-in,
+                opacity 0.3s linear,
+                margin 0.5s 0.3s ease-in-out;
+    }
+}
 /* Vue Transition */
 .page-enter-active,
 .page-leave-active {

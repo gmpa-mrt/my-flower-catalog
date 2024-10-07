@@ -6,7 +6,7 @@
         <link-component to="/table-contents" text="table of contents"/>
       </li>
       <li>
-        <link-component to="/list-page" text="catalog"/>
+        <link-component to="/list-page/plants" text="catalog"/>
       </li>
       <li>
         <link-component to="/my-notes" text="my notes"/>

@@ -8,8 +8,12 @@ export const routes = [
       component: () => import('./pages/TableContentsPage.vue'),
     },
     {
-        path: '/list-page',
+        path: '/list-page/:id',
         component: () => import('./pages/ListPage.vue'),
+    },
+    {
+        path: '/details',
+        component: () => import('./pages/DetailsPage.vue'),
     },
     {
         path: '/my-notes',

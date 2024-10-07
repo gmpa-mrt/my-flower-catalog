@@ -1,6 +1,6 @@
 <template>
-  <transition name="page" appear>
-<!--    <title-component title="table of content"/>-->
+<!--  <transition name="page" appear>
+&lt;!&ndash;    <title-component title="table of content"/>&ndash;&gt;
     <svg width="543.901" height="115.7" viewBox="0 0 543.901 115.7" xmlns="http://www.w3.org/2000/svg">
       <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#000" stroke-width="0.25mm"
          fill="#000000" style="stroke:#000;stroke-width:0.25mm;fill:#000000">
@@ -62,13 +62,66 @@
             id="15" vector-effect="non-scaling-stroke"/>
       </g>
     </svg>
-  </transition>
+  </transition>-->
+    <title-component title="table of content"/>
+    <ul>
+<!--      <li class="accordeon">
+        <button class="text-4xl">Species</button>
+        <div :class="show ? 'open' : 'opacity-0'">
+          <span class="text-3xl">item</span>
+          <span class="text-3xl">item</span>
+        </div>
+      </li>
+
+      <li class="accordeon">
+        <button class="text-4xl">Location</button>
+        <div :class="show ? 'block open' : 'opacity-0'">
+          <span class="text-3xl">item</span>
+          <span class="text-3xl">item</span>
+        </div>
+      </li>-->
+      <accordeon-item-component title="Species">
+        <router-link to="/list-page/flowers" class="text-3xl">Flowers</router-link>
+        <router-link to="/list-page/trees" class="text-3xl">Trees</router-link>
+      </accordeon-item-component>
+      <accordeon-item-component title="Location">
+        <router-link to="/" class="text-3xl">Flowers</router-link>
+        <router-link to="/" class="text-3xl">Trees</router-link>
+      </accordeon-item-component>
+
+
+    </ul>
 </template>
 
 <script setup>
 import TitleComponent from "@components/TitleComponent.vue";
+import {ref} from "vue";
+import AccordeonItemComponent from "@components/accordeon/AccordeonItemComponent.vue";
+import AccordeonComponent from "@components/accordeon/AccordeonComponent.vue";
+
+const show = ref(false)
+const toggle = () => {
+  show.value = !show.value
+}
 </script>
 
+<style scoped>
+  .accordeon {
+    position: relative;
+  }
+
+  .accordeon div {
+    transform: translateY(-100%);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .accordeon div.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
+
+<!--
 <style scoped>
 /* Style de base pour tous les tracés */
 .letter {
@@ -186,4 +239,4 @@ import TitleComponent from "@components/TitleComponent.vue";
 .letter:nth-of-type(14) {
   animation: op 0.4s 1.8s forwards ease-in-out;
 }
-</style>
+</style>-->
