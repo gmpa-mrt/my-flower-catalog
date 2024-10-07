@@ -12,7 +12,6 @@ import {ref} from "vue";
 const props = defineProps({
   title: String
 })
-console.log('Image ===> ', line)
 const title = ref(props.title)
 
 </script>

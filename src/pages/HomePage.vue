@@ -1,7 +1,7 @@
 <template>
   <title-component title="my diary"/>
   <nav class="mx-10">
-    <ul class="w-full flex flex-col items-center gap-9">
+    <ul class="flex w-full flex-col items-center gap-9">
       <li>
         <link-component to="/table-contents" text="table of contents"/>
       </li>
@@ -22,8 +22,10 @@
 import TitleComponent from "@/components/TitleComponent.vue";
 import LinkComponent from "@components/LinkComponent.vue";
 
+
 </script>
 
 <style scoped>
+
 
 </style>
