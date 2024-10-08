@@ -1,5 +1,5 @@
 <template>
-  <title-component title="list of plants"/>
+  <title-component :title="`list of ${itemName}`"/>
   <main>
     <div class="mx-4 flex grid-cols-2 flex-col items-center justify-items-center gap-12 md:grid lg:grid-cols-3 xl:grid-cols-4">
       <frame-component v-for="(item, index) in flowers" :index="index">
@@ -13,11 +13,12 @@
 import TitleComponent from "@components/TitleComponent.vue";
 import img from "@assets/test/img_01.jpg"
 import FrameComponent from "@components/FrameComponent.vue";
-import {computed, reactive, ref} from "vue";
+import {computed, reactive} from "vue";
 import {flowerData} from "@/data/data.js";
+import {useRoute} from "vue-router";
 
-// Calcule de la ligne et du nombre d'elements pour placement dans la grid data in object
-
+const route = useRoute()
+const itemName = computed(() => route.params.items)
 
 const flowers = reactive(flowerData.flowers)
 const firstOne = computed(() => flowers[0])

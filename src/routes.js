@@ -1,3 +1,4 @@
+
 export const routes = [
     {
         path: '/',
@@ -8,11 +9,18 @@ export const routes = [
       component: () => import('./pages/TableContentsPage.vue'),
     },
     {
-        path: '/list-page/:id',
+        path: '/list-page/:items(flowers|trees)',
         component: () => import('./pages/ListPage.vue'),
     },
     {
-        path: '/details',
+        // Prevents wrong route for items
+        path: '/list-page/',
+        redirect: to => {
+            return '/list-page/plants'
+        },
+    },
+    {
+        path: '/list-page/:items/:id',
         component: () => import('./pages/DetailsPage.vue'),
     },
     {
@@ -22,5 +30,9 @@ export const routes = [
     {
         path: '/front-cover',
         component: () => import('./pages/FrontCoverPage.vue'),
-    }
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        component: () => import('./pages/NotFoundPage.vue'),
+    },
 ]
