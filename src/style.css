@@ -12,6 +12,11 @@
         src: url('assets/fonts/vibes-regular.ttf');
         font-display: swap;
     }
+    @font-face {
+        font-family: 'info';
+        src: url('assets/fonts/info-regular.ttf');
+        font-display: swap;
+    }
 }
 
 @layer utilities {

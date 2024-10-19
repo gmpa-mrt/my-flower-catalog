@@ -7,10 +7,12 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['vibes', 'sans-serif'],
+        'info': ['info', 'sans-serif']
       },
       colors: {
         white: {
           DEFAULT: '#FFFFFF',
+          50:  '#FAFAFA',
           100: '#DBD7D2',
           200: '#CCC7C2',
           300: '#696969',

@@ -2,6 +2,14 @@
 export const routes = [
     {
         path: '/',
+        component: () => import('./pages/FrontCoverPage.vue'),
+    },
+    {
+        path: '/first-page',
+        component: () => import('./pages/FirstPage.vue'),
+    },
+    {
+        path: '/summary',
         component: () => import('./pages/HomePage.vue'),
     },
     {
@@ -26,10 +34,6 @@ export const routes = [
     {
         path: '/my-notes',
         component: () => import('./pages/NotesPage.vue'),
-    },
-    {
-        path: '/front-cover',
-        component: () => import('./pages/FrontCoverPage.vue'),
     },
     {
         path: '/:pathMatch(.*)*',
